@@ -30,3 +30,48 @@ class App extends React.Component {
 
 
 export default App
+
+
+
+
+handleChange = e => {
+    this.setState({
+        [e.target.name]: e.target.value,
+    })
+}
+
+addThing = e => {
+    e.preventDefault;
+    let newThing={
+        exampleOne: this.state.exampleOne,
+        exampleTwo: this.state.exampleTwo,
+    }
+    this.setState({
+        things=[...this.state.things, newThing],
+        exampleOne: "",
+        exampleTwo: ""
+    })
+}
+
+
+
+
+count = e => {
+    let ticks=this.state.likes + 1
+    this.setState({
+        likes: likes
+    })
+}
+
+
+onClick={this.count}
+
+
+
+
+
+
+
+
+ onClick={this.handleChange}
+ onSubmit={addThing}

@@ -75,3 +75,65 @@ onClick={this.count}
 
  onClick={this.handleChange}
  onSubmit={addThing}
+
+
+
+
+
+
+login = e => {
+    e.preventDefault();
+    localStorage.setItem("username", this.state.username);
+    localStorage.setItem("password", this.state.password);
+    window.location.reload();
+}
+
+
+
+
+
+
+localStorage.getItem("username")
+
+
+if (!localStorage.getItem("username") || localStorage.getItem("password"))
+    return (
+        <Login />
+    )
+
+    return (
+        <App />
+    )
+
+
+
+handleChange = e => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
+
+addComment = e => {
+    e.preventDefault();
+    newComment = {
+        username: localStorage.getItem("username"),
+        text: this.state.text 
+    }
+    this.setState({
+        comment: [...comment, newComment],
+        state: ""
+    })
+}
+
+
+onSubmit={this.handleChange}
+
+
+
+
+
+
+
+
+
+
